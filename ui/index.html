@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HDFC Mutual Fund FAQ Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>HDFC Mutual Fund FAQ</h1>
+        <p class="subtitle">Facts from five Groww scheme pages — no investment advice.</p>
+        <p class="disclaimer-banner">Facts-only. No investment advice.</p>
+      </header>
+
+      <section class="examples" aria-label="Example questions">
+        <p class="examples-label">Try an example:</p>
+        <div class="example-buttons">
+          <button type="button" class="example-btn" data-message="What is the expense ratio of HDFC Mid Cap Fund Direct Growth?">
+            Expense ratio — Mid Cap
+          </button>
+          <button type="button" class="example-btn" data-message="What is the exit load on HDFC Defence Fund Direct Growth?">
+            Exit load — Defence
+          </button>
+          <button type="button" class="example-btn" data-message="Who manages HDFC Gold ETF Fund of Fund Direct Plan Growth?">
+            Fund managers — Gold ETF FoF
+          </button>
+        </div>
+      </section>
+
+      <main class="chat" id="chat" aria-live="polite"></main>
+
+      <form class="composer" id="composer">
+        <label class="sr-only" for="message">Your question</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="2"
+          placeholder="Ask a factual question about one of the five HDFC schemes…"
+          maxlength="4000"
+          required
+        ></textarea>
+        <button type="submit" id="send-btn">Ask</button>
+      </form>
+      <p class="privacy-note">Do not enter PAN, Aadhaar, email, phone, or account numbers.</p>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

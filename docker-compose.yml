@@ -1,0 +1,13 @@
+# Optional local stack (Phase 0+). API only; Chroma uses a mounted volume.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data/index:/app/data/index
+    command: python -m app.main
