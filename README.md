@@ -9,6 +9,7 @@ Facts-only RAG chatbot for **five HDFC Mutual Fund schemes** on Groww. No invest
 | [DOCS/ProblemStatement.md](DOCS/ProblemStatement.md) | Scope, corpus, success criteria |
 | [DOCS/architecture.md](DOCS/architecture.md) | System design and components |
 | [DOCS/implementationplan.md](DOCS/implementationplan.md) | Phase-wise build plan |
+| [DOCS/deployment-plan.md](DOCS/deployment-plan.md) | Streamlit Community Cloud deployment |
 | [DOCS/edgecase.md](DOCS/edgecase.md) | Edge cases and test catalog |
 
 ## Requirements
