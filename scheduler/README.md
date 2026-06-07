@@ -63,6 +63,15 @@ python scheduler/daily.py
 
 ## Production options
 
+### GitHub Actions (recommended for cloud)
+
+Workflow: [`.github/workflows/ingestion-daily.yml`](../.github/workflows/ingestion-daily.yml)
+
+- **Schedule:** `30 4 * * *` UTC = **10:00 AM IST** daily
+- **Manual run:** GitHub → **Actions** → **Daily ingestion** → **Run workflow**
+
+The workflow calls `python scheduler/daily.py --once --subprocess --use-cache`.
+
 ### Linux: system cron (10:00 AM IST = 04:30 UTC)
 
 ```cron

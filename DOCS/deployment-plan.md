@@ -218,7 +218,10 @@ Never commit real keys. `.env` stays local only.
 
 Streamlit Cloud **cannot** run `scheduler/daily.py` as a daemon. Use **GitHub Actions** instead.
 
-Example `.github/workflows/ingestion-daily.yml`:
+Implemented workflow: [`.github/workflows/ingestion-daily.yml`](../.github/workflows/ingestion-daily.yml) (`30 4 * * *` UTC = 10:00 AM IST, plus manual **Run workflow**).
+
+<details>
+<summary>Example workflow (reference — already in repo)</summary>
 
 ```yaml
 name: Daily ingestion
@@ -243,6 +246,8 @@ jobs:
           USE_CACHE: "true"
       # Optional: commit updated index back to repo (requires bot token)
 ```
+
+</details>
 
 For a class/demo project, **manual** `python ingestion/run.py` locally + push updated index is enough.
 

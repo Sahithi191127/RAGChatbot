@@ -1,0 +1,47 @@
+name: Daily ingestion
+
+# 10:00 AM IST = 04:30 UTC (see scheduler/README.md)
+on:
+  schedule:
+    - cron: "30 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: daily-ingestion
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scheduler (triggers ingestion/run.py)
+        env:
+          PYTHONPATH: .
+          USE_CACHE: "true"
+          SCHEDULER_RETRY_ON_FAILURE: "true"
+        run: python scheduler/daily.py --once --subprocess --use-cache
+
+      - name: Upload ingestion artifacts (optional debug)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingestion-output-${{ github.run_id }}
+          path: |
+            data/index/metadata.json
+            data/processed/*.json
+          retention-days: 7
+          if-no-files-found: ignore
