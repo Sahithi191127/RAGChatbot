@@ -117,7 +117,7 @@ Railway sets **`PORT`** automatically — the app reads it via `API_PORT` / `POR
 - **Memory:** use at least **2 GB RAM** (sentence-transformers + Chroma).
 - **Health check:** `/health` (configured in `railway.toml`).
 - **Logs:** Railway → **Deployments → View logs** if build OOMs.
-- **Daily ingestion:** GitHub Actions → **Daily ingestion** (already in repo); artifacts do not update Railway automatically — re-deploy or use a volume + manual ingest for now.
+- **Daily ingestion:** GitHub Actions → **Daily ingestion** (10 AM IST). On success it commits `data/index/` to `main`; Railway redeploys automatically from GitHub.
 
 ---
 

@@ -69,8 +69,10 @@ Workflow: [`.github/workflows/ingestion-daily.yml`](../.github/workflows/ingesti
 
 - **Schedule:** `30 4 * * *` UTC = **10:00 AM IST** daily
 - **Manual run:** GitHub → **Actions** → **Daily ingestion** → **Run workflow**
+- **Fresh fetch:** pulls live Groww pages (no `--use-cache`)
+- **Auto-deploy:** on success, commits `data/index/` to `main` → Railway redeploys from GitHub
 
-The workflow calls `python scheduler/daily.py --once --subprocess --use-cache`.
+If the commit step fails with “refusing to allow an OAuth App to create or update workflow”, enable **Settings → Actions → General → Workflow permissions → Read and write**, and allow `github-actions[bot]` to push to `main` if branch protection is on.
 
 ### Linux: system cron (10:00 AM IST = 04:30 UTC)
 

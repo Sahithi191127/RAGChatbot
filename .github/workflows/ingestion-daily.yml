@@ -6,6 +6,9 @@ on:
     - cron: "30 4 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: daily-ingestion
   cancel-in-progress: false
@@ -18,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,14 +33,27 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run scheduler (triggers ingestion/run.py)
+      - name: Run daily ingestion (fresh fetch from Groww)
         env:
           PYTHONPATH: .
-          USE_CACHE: "true"
           SCHEDULER_RETRY_ON_FAILURE: "true"
-        run: python scheduler/daily.py --once --subprocess --use-cache
+        run: python scheduler/daily.py --once --subprocess
 
-      - name: Upload ingestion artifacts (optional debug)
+      - name: Commit and push index (triggers Railway redeploy)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/index/chroma data/index/metadata.json
+          if git diff --staged --quiet; then
+            echo "Index unchanged — no commit needed."
+            exit 0
+          fi
+          BUILT_AT=$(python -c "import json; print(json.load(open('data/index/metadata.json'))['built_at'][:10])")
+          git commit -m "chore: refresh corpus index from daily ingestion ($BUILT_AT)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Upload ingestion artifacts (debug)
         if: always()
         uses: actions/upload-artifact@v4
         with:
