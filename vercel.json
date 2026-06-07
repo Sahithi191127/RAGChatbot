@@ -4,5 +4,8 @@
   "buildCommand": "cd frontend && npm run build",
   "devCommand": "cd frontend && npm run dev",
   "outputDirectory": "frontend/.next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "env": {
+    "API_URL": "https://ragchatbot-production-6bb3.up.railway.app"
+  }
 }

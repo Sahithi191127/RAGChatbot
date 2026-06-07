@@ -1,6 +1,14 @@
+/** Production Railway API (used when API_URL is not set on Vercel). */
+const PRODUCTION_RAILWAY_URL =
+  "https://ragchatbot-production-6bb3.up.railway.app";
+
 /** Railway / FastAPI origin for server-side proxy (set on Vercel as API_URL). */
 export function backendBaseUrl(): string | null {
-  const raw = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL;
+  const raw =
+    process.env.API_URL ??
+    process.env.NEXT_PUBLIC_API_URL ??
+    (process.env.VERCEL ? PRODUCTION_RAILWAY_URL : undefined);
+
   if (raw?.trim()) {
     return raw.trim().replace(/\/$/, "");
   }
