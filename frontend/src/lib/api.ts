@@ -1,7 +1,6 @@
 import type { ChatResponse, SchemeListItem } from "./types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
-
+/** Same-origin API routes proxy to Railway via `API_URL` on Vercel. */
 async function parseError(res: Response): Promise<string> {
   try {
     const body = await res.json();
@@ -16,7 +15,7 @@ async function parseError(res: Response): Promise<string> {
 }
 
 export async function fetchSchemes(): Promise<SchemeListItem[]> {
-  const res = await fetch(`${API_BASE}/api/schemes`, { cache: "no-store" });
+  const res = await fetch("/api/schemes", { cache: "no-store" });
   if (!res.ok) {
     throw new Error(await parseError(res));
   }
@@ -24,7 +23,7 @@ export async function fetchSchemes(): Promise<SchemeListItem[]> {
 }
 
 export async function sendChatMessage(message: string): Promise<ChatResponse> {
-  const res = await fetch(`${API_BASE}/api/chat`, {
+  const res = await fetch("/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message }),

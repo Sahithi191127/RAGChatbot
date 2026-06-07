@@ -136,15 +136,21 @@ Vercel → **Settings → Environment Variables**:
 
 | Variable | Value | Environments |
 |----------|--------|--------------|
-| `NEXT_PUBLIC_API_URL` | `https://YOUR-RAILWAY-URL.up.railway.app` | Production, Preview, Development |
+| **`API_URL`** | `https://YOUR-RAILWAY-URL.up.railway.app` | Production, Preview, Development |
+
+The Next.js app proxies `/api/chat` and `/api/schemes` to Railway (see `frontend/src/app/api/`).
+
+Optional (direct browser → Railway):
+
+| Variable | Value |
+|----------|--------|
+| `NEXT_PUBLIC_API_URL` | Same Railway URL |
 
 No trailing slash. Example:
 
 ```text
-NEXT_PUBLIC_API_URL=https://ragchatbot-api-production.up.railway.app
+API_URL=https://ragchatbot-api-production.up.railway.app
 ```
-
-The browser calls Railway directly (CORS is enabled on the API).
 
 ### 3.3 Deploy
 
