@@ -8,7 +8,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from app import __version__
@@ -111,10 +111,16 @@ def api_chat(body: ChatRequest, request: Request) -> ChatResponse:
     return response
 
 
+@app.get("/")
+def root() -> RedirectResponse:
+    """Railway/public URL root — API lives under /health and /api/*."""
+    return RedirectResponse(url="/health", status_code=302)
+
+
 UI_DIR = Path(__file__).resolve().parent.parent / "ui"
 if UI_DIR.is_dir():
 
-    @app.get("/", include_in_schema=False)
+    @app.get("/ui", include_in_schema=False)
     def serve_chat_ui() -> FileResponse:
         return FileResponse(UI_DIR / "index.html")
 

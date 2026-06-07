@@ -1,0 +1,72 @@
+{
+  "built_at": "2026-06-02T16:20:48.830959Z",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_provider": "local",
+  "chunk_count": 49,
+  "collection_name": "hdfc_faq_corpus",
+  "schemes": [
+    {
+      "slug": "hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "category": "Equity — Mid Cap",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "aliases": [
+        "mid cap",
+        "hdfc mid cap",
+        "midcap",
+        "hdfc midcap"
+      ],
+      "last_fetched_at": "2026-06-02"
+    },
+    {
+      "slug": "hdfc-small-cap-fund-direct-growth",
+      "scheme_name": "HDFC Small Cap Fund Direct Growth",
+      "category": "Equity — Small Cap",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "aliases": [
+        "small cap",
+        "hdfc small cap",
+        "smallcap"
+      ],
+      "last_fetched_at": "2026-06-02"
+    },
+    {
+      "slug": "hdfc-large-cap-fund-direct-growth",
+      "scheme_name": "HDFC Large Cap Fund Direct Growth",
+      "category": "Equity — Large Cap",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "aliases": [
+        "large cap",
+        "hdfc large cap",
+        "largecap"
+      ],
+      "last_fetched_at": "2026-06-02"
+    },
+    {
+      "slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "category": "Commodities — Gold",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "aliases": [
+        "gold etf fof",
+        "gold etf fund of fund",
+        "hdfc gold fof",
+        "gold fund of fund"
+      ],
+      "last_fetched_at": "2026-06-02"
+    },
+    {
+      "slug": "hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "category": "Equity — Thematic",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "aliases": [
+        "defence fund",
+        "defense fund",
+        "hdfc defence",
+        "hdfc defense"
+      ],
+      "last_fetched_at": "2026-06-02"
+    }
+  ]
+}

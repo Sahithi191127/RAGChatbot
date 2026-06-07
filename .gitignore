@@ -19,7 +19,11 @@ htmlcov/
 .coverage
 
 # Vector index & fetched data (regenerated locally)
-data/index/
+# Chroma index is committed for Railway/Vercel deploy (~1 MB)
+data/index/*
+!data/index/chroma/
+!data/index/chroma/**
+!data/index/metadata.json
 data/raw/*.html
 data/processed/*.json
 

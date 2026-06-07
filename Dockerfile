@@ -13,6 +13,7 @@ COPY app ./app
 COPY config ./config
 COPY ingestion ./ingestion
 COPY data ./data
+COPY ui ./ui
 
 EXPOSE 8000
 
