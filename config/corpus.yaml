@@ -17,8 +17,8 @@ sections:
 
 # Educational links for advisory/comparison refusals (not RAG corpus)
 refusal_urls:
-  amfi: https://www.amfiindia.com/investor/knowledge-center-info?faqs
-  sebi: https://www.sebi.gov.in/sebiweb/home/HomePage.jsp?siteLanguage=en
+  amfi: https://www.amfiindia.com/investor
+  sebi: https://investor.sebi.gov.in/
 
 disclaimer: "Facts-only. No investment advice."
 

@@ -485,7 +485,7 @@ Response (factual):
 Response (refusal):
 {
   "answer": "I can only answer factual questions about HDFC schemes in my corpus, such as expense ratio, exit load, or fund manager details. I cannot provide investment advice or recommend which fund to choose.",
-  "citation_url": "https://www.amfiindia.com/investor/knowledge-center-info?faqs",
+  "citation_url": "https://www.amfiindia.com/investor",
   "last_updated": "2026-05-29",
   "is_refusal": true,
   "disclaimer": "Facts-only. No investment advice."

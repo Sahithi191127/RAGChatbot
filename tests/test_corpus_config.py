@@ -25,8 +25,8 @@ GROWW_URLS = {
 }
 
 REFUSAL_URLS = {
-    "https://www.amfiindia.com/investor/knowledge-center-info?faqs",
-    "https://www.sebi.gov.in/sebiweb/home/HomePage.jsp?siteLanguage=en",
+    "https://www.amfiindia.com/investor",
+    "https://investor.sebi.gov.in/",
 }
 
 
