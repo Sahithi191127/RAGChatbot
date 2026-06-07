@@ -2,6 +2,7 @@
 
 from functools import lru_cache
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -13,7 +14,10 @@ class Settings(BaseSettings):
     )
 
     api_host: str = "0.0.0.0"
-    api_port: int = 8000
+    api_port: int = Field(
+        default=8000,
+        validation_alias=AliasChoices("API_PORT", "PORT"),
+    )
     chroma_path: str = "./data/index/chroma"
     embedding_model: str = "BAAI/bge-small-en-v1.5"
     llm_provider: str = "groq"
