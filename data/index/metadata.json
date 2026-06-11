@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-06-10T16:51:01.521639Z",
+  "built_at": "2026-06-11T17:50:31.786720Z",
   "embedding_model": "BAAI/bge-small-en-v1.5",
   "embedding_provider": "local",
   "chunk_count": 46,
@@ -16,7 +16,7 @@
         "midcap",
         "hdfc midcap"
       ],
-      "last_fetched_at": "2026-06-10"
+      "last_fetched_at": "2026-06-11"
     },
     {
       "slug": "hdfc-small-cap-fund-direct-growth",
@@ -28,7 +28,7 @@
         "hdfc small cap",
         "smallcap"
       ],
-      "last_fetched_at": "2026-06-10"
+      "last_fetched_at": "2026-06-11"
     },
     {
       "slug": "hdfc-large-cap-fund-direct-growth",
@@ -40,7 +40,7 @@
         "hdfc large cap",
         "largecap"
       ],
-      "last_fetched_at": "2026-06-10"
+      "last_fetched_at": "2026-06-11"
     },
     {
       "slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
@@ -53,7 +53,7 @@
         "hdfc gold fof",
         "gold fund of fund"
       ],
-      "last_fetched_at": "2026-06-10"
+      "last_fetched_at": "2026-06-11"
     },
     {
       "slug": "hdfc-defence-fund-direct-growth",
@@ -66,7 +66,7 @@
         "hdfc defence",
         "hdfc defense"
       ],
-      "last_fetched_at": "2026-06-10"
+      "last_fetched_at": "2026-06-11"
     }
   ]
 }
